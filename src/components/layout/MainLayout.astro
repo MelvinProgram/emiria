@@ -2,14 +2,24 @@
 // src/components/layout/MainLayout.astro
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
+const siteTitle = "Emiria - Cosmética capilar premium";
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <meta name="description" content="Productos de cosmética capilar premium con ingredientes naturales. Rutina sencilla, resultados visibles." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Emiria — Cosmética capilar premium" />
+    <meta property="og:description" content="Cuida tu cabello con fórmulas limpias y eficaces." />
+    <meta property="og:type" content="website" />
+    <title>{siteTitle}</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <slot name="head" />
+
   </head>
   <body class="bg-[#f8f6f3] text-[#2C2C2C] antialiased">
     <Header />

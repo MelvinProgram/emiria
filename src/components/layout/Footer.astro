@@ -1,10 +1,20 @@
 ---
 // src/components/layout/Footer.astro
+const footerLinks = [
+  "Política de privacidad",
+  "Términos y condiciones",
+  "Contacto",
+];
 ---
-<footer class="mt-24 border-t border-black/5">
+<!-- <footer class="mt-24 border-t border-black/5">
   <div class="mx-auto max-w-7xl px-4 py-10 grid gap-6 md:grid-cols-3 text-sm">
     <div>
-      <p class="font-serif text-base mb-2">MarcaBeauty</p>
+      <a href="/" class="font-serif text-lg tracking-wide">
+      <img 
+        src="/images/logo-1.svg" 
+        alt="Logo Emiria"
+        class="h-15 w-auto object-cover">
+    </a>
       <p class="opacity-70">
         Cosmética capilar elegante y consciente.
       </p>
@@ -21,4 +31,37 @@
       <a href="#" aria-label="TikTok" class="hover:opacity-70">TikTok</a>
     </div>
   </div>
+</footer> -->
+
+<footer class="border-t border-black/5 py-16">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <div class="flex flex-col items-center gap-6 text-center">
+
+      <a href="/" class="font-serif text-lg tracking-wide">
+      <img 
+        src="/images/logo-1.svg" 
+        alt="Logo Emiria"
+        class="h-15 w-auto object-cover">
+      </a>
+
+      <p class="max-w-md text-sm opacity-70">
+        Cosmética capilar formulada con ingredientes de alta calidad,
+        diseñada para cuidar tu cabello rizado de forma natural.
+      </p>
+
+      <ul class="flex gap-6 text-sm opacity-70">
+        {footerLinks.map(link => (
+          <li>{link}</li>
+        ))}
+      </ul>
+
+      <span class="text-xs opacity-50">
+        © {new Date().getFullYear()} <span class="inline-block rotate-180 pb-1">a</span>miria. Todos los derechos reservados.
+      </span>
+
+    </div>
+
+  </div>
 </footer>
+

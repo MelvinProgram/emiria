@@ -1,0 +1,50 @@
+---
+// Reviews section
+const reviews = [
+  {
+    name: "Laura M.",
+    text: "Desde la primera semana noté el cabello más suave y con brillo. Me encanta la textura y el aroma.",
+  },
+  {
+    name: "Claudia R.",
+    text: "Por fin una rutina capilar que no me apelmaza el pelo. Se nota la calidad del producto.",
+  },
+  {
+    name: "María G.",
+    text: "Tengo el cabello sensible y estos productos me han ido genial. Muy recomendables.",
+  },
+];
+---
+<section id="reviews" class="py-20">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <!-- Header -->
+    <div class="mb-14 text-center">
+      <p class="mb-2 text-xs uppercase tracking-wide text-[#9B9B7E]">
+        Opiniones reales
+      </p>
+      <h2 class="font-serif text-3xl md:text-4xl">
+        Lo que dicen nuestras clientas
+      </h2>
+    </div>
+
+    <!-- Reviews grid -->
+    <div class="grid gap-8 md:grid-cols-3">
+      {reviews.map((review) => (
+        <article class="rounded-3xl bg-white p-8 shadow-sm">
+          <p class="mb-6 text-sm opacity-80">
+            “{review.text}”
+          </p>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-medium">
+              {review.name}
+            </span>
+            <span class="text-[#9B9B7E]">★★★★★</span>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

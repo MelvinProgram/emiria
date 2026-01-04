@@ -1,0 +1,54 @@
+---
+// How to use section
+const steps = [
+  {
+    step: "01",
+    title: "Aplica",
+    text: "Aplica el producto sobre el cabello húmedo y masajea suavemente el cuero cabelludo.",
+  },
+  {
+    step: "02",
+    title: "Deja actuar",
+    text: "Permite que los ingredientes actúen durante unos minutos para mejores resultados.",
+  },
+  {
+    step: "03",
+    title: "Aclara",
+    text: "Aclara con abundante agua y continúa con tu rutina habitual.",
+  },
+];
+---
+<section id="uso" class="py-20 bg-white">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <!-- Header -->
+    <div class="mb-14 text-center">
+      <p class="mb-2 text-xs uppercase tracking-wide text-[#9B9B7E]">
+        Cómo se usa
+      </p>
+      <h2 class="font-serif text-3xl md:text-4xl">
+        Una rutina sencilla, sin complicaciones
+      </h2>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid gap-8 md:grid-cols-3">
+      {steps.map((step) => (
+        <div class="rounded-3xl border border-black/5 p-8 text-center">
+          <span class="mb-4 block text-sm tracking-widest text-[#9B9B7E]">
+            {step.step}
+          </span>
+
+          <h3 class="mb-3 font-serif text-xl">
+            {step.title}
+          </h3>
+
+          <p class="text-sm opacity-80">
+            {step.text}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

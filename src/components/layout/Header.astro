@@ -1,5 +1,11 @@
 ---
 // src/components/layout/Header.astro
+const navLinks = [
+  { label: "Productos", href: "#productos" },
+  { label: "Ingredientes", href: "#ingredientes" },
+  { label: "Cómo se usa", href: "#uso" },
+  { label: "Opiniones", href: "#reviews" },
+];
 ---
 <header class="sticky top-0 z-50 bg-[#f8f6f3]/90 backdrop-blur border-b border-black/5">
   <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
@@ -12,12 +18,21 @@
     </a>
 
     <!-- Nav desktop -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        {navLinks.map(link => (
+          <a href={link.href} class="opacity-80 hover:opacity-100">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+    <!-- Nav desktop 
     <nav class="hidden md:flex items-center gap-6 text-sm">
       <a href="#beneficios" class="hover:opacity-70">Beneficios</a>
       <a href="#productos" class="hover:opacity-70">Productos</a>
       <a href="#resultados" class="hover:opacity-70">Resultados</a>
       <a href="#faq" class="hover:opacity-70">FAQ</a>
-    </nav>
+    </nav>-->
 
     <!-- CTA -->
     <a
