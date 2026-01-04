@@ -1,0 +1,21 @@
+---
+// src/components/layout/MainLayout.astro
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <slot name="head" />
+  </head>
+  <body class="bg-[#f8f6f3] text-[#2C2C2C] antialiased">
+    <Header />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

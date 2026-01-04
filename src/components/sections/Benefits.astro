@@ -1,0 +1,56 @@
+---
+// Benefits section
+const benefits = [
+  {
+    title: "Fórmula limpia",
+    text: "Sin sulfatos, siliconas ni parabenos. Respeta el equilibrio natural del cuero cabelludo.",
+  },
+  {
+    title: "Resultados visibles",
+    text: "Mejora la textura, el brillo y la fuerza del cabello desde las primeras aplicaciones.",
+  },
+  {
+    title: "Apto para uso diario",
+    text: "Texturas ligeras diseñadas para integrarse fácilmente en tu rutina diaria.",
+  },
+  {
+    title: "Desarrollado con expertos",
+    text: "Fórmulas creadas junto a especialistas en cuidado capilar.",
+  },
+];
+---
+<section id="beneficios" class="py-20 bg-white">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <!-- Header -->
+    <div class="mb-14 text-center">
+      <p class="mb-2 text-xs uppercase tracking-wide text-[#9B9B7E]">
+        Por qué elegirnos
+      </p>
+      <h2 class="font-serif text-3xl md:text-4xl">
+        Beneficios reales para tu cabello
+      </h2>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {benefits.map((benefit) => (
+        <div class="rounded-3xl border border-black/5 p-6 text-center">
+          <!-- Icon placeholder -->
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#9B9B7E]/10 text-[#9B9B7E]">
+            ✦
+          </div>
+
+          <h3 class="mb-2 font-serif text-lg">
+            {benefit.title}
+          </h3>
+
+          <p class="text-sm opacity-80">
+            {benefit.text}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

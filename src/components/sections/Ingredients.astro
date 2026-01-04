@@ -1,0 +1,70 @@
+---
+// Ingredients section
+const ingredients = [
+  {
+    name: "Aceite de argán",
+    description: "Nutre en profundidad, aporta brillo y mejora la elasticidad del cabello.",
+  },
+  {
+    name: "Extracto de aloe vera",
+    description: "Hidrata, calma el cuero cabelludo y fortalece la fibra capilar.",
+  },
+  {
+    name: "Proteínas vegetales",
+    description: "Refuerzan el cabello desde el interior y ayudan a prevenir la rotura.",
+  },
+];
+---
+<section id="ingredientes" class="py-20">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <div class="grid gap-12 md:grid-cols-2 md:items-center">
+
+      <!-- Imagen -->
+      <div class="relative">
+        <div class="aspect-4/5 overflow-hidden rounded-3xl bg-[#eae7e1]">
+          <img
+            src="/images/ingredientes-emiria.jpg"
+            alt="Ingredientes naturales del producto capilar"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <p class="mb-2 text-xs uppercase tracking-wide text-[#9B9B7E]">
+          Ingredientes clave
+        </p>
+
+        <h2 class="mb-6 font-serif text-3xl md:text-4xl">
+          Fórmulas limpias, resultados visibles
+        </h2>
+
+        <p class="mb-8 max-w-md text-base opacity-80">
+          Cada ingrediente ha sido seleccionado por su eficacia y
+          compatibilidad con el cabello, respetando su equilibrio natural.
+        </p>
+
+        <ul class="space-y-6">
+          {ingredients.map((ingredient) => (
+            <li class="flex gap-4">
+              <span class="mt-1 text-[#9B9B7E]">—</span>
+              <div>
+                <h3 class="font-serif text-lg">
+                  {ingredient.name}
+                </h3>
+                <p class="text-sm opacity-80">
+                  {ingredient.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
