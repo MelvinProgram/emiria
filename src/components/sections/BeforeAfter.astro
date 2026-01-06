@@ -1,0 +1,84 @@
+---
+interface Props {
+  beforeImage: string;
+  afterImage: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+}
+
+const { 
+  beforeImage, 
+  afterImage, 
+  beforeLabel = "Before", 
+  afterLabel = "After" 
+} = Astro.props;
+---
+
+<div class="before-after-container relative w-full h-[80vh] overflow-hidden group select-none" style="--position: 50%">
+  
+  <img 
+    src={afterImage} 
+    alt="After" 
+    class="block w-full h-full object-cover"
+    draggable="false"
+  />
+
+  <span class="absolute top-6 right-6 bg-white/80 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-md text-sm font-semibold z-10 shadow-sm pointer-events-none">
+    {afterLabel}
+  </span>
+
+  <div class="absolute inset-0 w-full h-full">
+    <img 
+      src={beforeImage} 
+      alt="Before" 
+      class="absolute top-0 left-0 w-full h-full object-cover"
+      style="clip-path: inset(0 calc(100% - var(--position)) 0 0);"
+      draggable="false"
+    />
+  </div>
+
+  <span class="absolute top-6 left-6 bg-white/80 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-md text-sm font-semibold z-20 shadow-sm pointer-events-none">
+    {beforeLabel}
+  </span>
+
+  <input 
+    type="range" 
+    min="0" 
+    max="100" 
+    value="50" 
+    class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+    aria-label="Percentage of before photo shown"
+  />
+
+  <div 
+    class="absolute inset-y-0 pointer-events-none z-20 flex items-center justify-center w-1 -ml-0.5 bg-white shadow-xl"
+    style="left: var(--position)"
+  >
+    <div class="bg-white rounded-full p-1.5 shadow-md text-gray-800 border border-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" class="hidden rotate-90" /> 
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" class="hidden"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 12h7.5m-7.5 0l-3 3m3-3l-3-3m10.5 0l3 3m-3 3l3-3" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Lógica para manejar el slider
+  // Usamos querySelectorAll para que funcione si pones varios sliders en la misma página
+  const containers = document.querySelectorAll('.before-after-container');
+
+  containers.forEach(container => {
+    const slider = container.querySelector('input[type="range"]') as HTMLInputElement;
+
+    if(slider) {
+      slider.addEventListener('input', (e) => {
+        // Al mover el slider, actualizamos la variable CSS --position del contenedor
+        const target = e.target as HTMLInputElement;
+        (container as HTMLElement).style.setProperty('--position', `${target.value}%`);
+      });
+    }
+  });
+</script>

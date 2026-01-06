@@ -1,6 +1,8 @@
 ---
 // src/pages/index.astro
 import "../style/global.css";
+import imgBefore from "./public/images/before-2.jpg"; // O ruta pública
+import imgAfter from "./public/images/after-2.jpg";
 
 import MainLayout from "../components/layout/MainLayout.astro";
 import Hero from "../components/sections/Hero.astro";
@@ -10,13 +12,31 @@ import Ingredients from "../components/sections/Ingredients.astro";
 import HowToUse from "../components/sections/HowToUse.astro";
 import Reviews from "../components/sections/Rewiews.astro";
 import FinalCTA from "../components/sections/FinalCTA.astro";
+import BeforeAfter from "../components/sections/BeforeAfter.astro";
+import Slide from "../components/sections/Slide.astro";
 ---
 <MainLayout>
+  <Slide />
   <Hero />
   <Benefits />
   <Products />
   <Ingredients />
   <HowToUse />
+  <BeforeAfter 
+      beforeImage={imgBefore.src}
+      afterImage={imgAfter.src}
+      beforeLabel="ANTES"
+      afterLabel="DESPUÉS"
+    />
   <Reviews />
   <FinalCTA />
 </MainLayout>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emiria",
+  "url": "https://tudominio.com", // Reemplaza con la URL de tu sitio web
+  "description": "Cosmética capilar premium con ingredientes naturales"// Reemplaza con la descripción de tu sitio web
+}
+</script>
