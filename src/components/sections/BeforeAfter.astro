@@ -14,13 +14,14 @@ const {
 } = Astro.props;
 ---
 
-<div class="before-after-container relative w-full h-[80vh] overflow-hidden group select-none" style="--position: 50%">
+<div id="before-after" class="before-after-container relative w-full h-[80vh] overflow-hidden group select-none" style="--position: 50%">
   
   <img 
     src={afterImage} 
     alt="After" 
     class="block w-full h-full object-cover"
     draggable="false"
+    width="100%" height="100%"
   />
 
   <span class="absolute top-6 right-6 bg-white/80 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-md text-sm font-semibold z-10 shadow-sm pointer-events-none">
@@ -34,6 +35,7 @@ const {
       class="absolute top-0 left-0 w-full h-full object-cover"
       style="clip-path: inset(0 calc(100% - var(--position)) 0 0);"
       draggable="false"
+      width="100%" height="100%"
     />
   </div>
 
