@@ -1,10 +1,11 @@
 ---
-// Hero section – mobile first
+import { Image } from "astro:assets";
+import heroImage from "/public/images/hero-product.jpg";
 ---
 <section class="relative overflow-hidden">
   <div class="mx-auto max-w-7xl px-4 py-16 md:py-24">
     <div class="grid gap-12 md:grid-cols-2 md:items-center">
-      
+
       <!-- Texto -->
       <div class="text-center md:text-left">
         <p class="mb-4 inline-block rounded-full bg-[#9B9B7E]/10 px-4 py-1 text-xs tracking-wide uppercase text-[#9B9B7E]">
@@ -38,15 +39,18 @@
         </div>
       </div>
 
-      <!-- Imagen -->
+      <!-- Imagen LCP optimizada -->
       <div class="relative">
         <div class="aspect-4/5 overflow-hidden rounded-3xl bg-[#eae7e1]">
-          <img
-            src="/images/hero-product.jpg"
-            alt="Producto cosmético capilar"
-            class="h-full w-full object-cover"
+          <Image
+            src={heroImage}
+            alt="Producto cosmético capilar para cabello rizado"
+            widths={[480, 768, 1024, 1440]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            format="webp"
             loading="eager"
-            width="2048" height="2048"
+            priority
+            class="h-full w-full object-cover"
           />
         </div>
       </div>

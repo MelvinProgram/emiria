@@ -11,12 +11,39 @@ npm create astro@latest -- --template minimal
 Inside of your Astro project, you'll see the following folders and files:
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
+│   │   └── MainLayout.astro
+│   │
+│   ├── sections/
+│   │   ├── SlideHero.astro
+│   │   ├── Hero.astro
+│   │   ├── Benefits.astro
+│   │   ├── ForWho.astro
+│   │   ├── Products.astro
+│   │   ├── Ingredients.astro
+│   │   ├── HowToUse.astro
+│   │   ├── BeforeAfter.astro
+│   │   ├── Reviews.astro
+│   │   ├── Experts.astro
+│   │   ├── FAQCurly.astro
+│   │   ├── FounderHistory.astro
+│   │   └── FinalCTA.astro
+│
+├── pages/
+│   └── index.astro
+│
+├── styles/
+│   └── global.css
+│
+└── data/
+    ├── products.ts
+    └── faqs.ts
+
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.

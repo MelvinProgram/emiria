@@ -6,5 +6,16 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: false,
+        },
+        format: {
+          comments: false,
+        },
+      },
+    },
   },
 });
