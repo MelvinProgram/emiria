@@ -1,0 +1,70 @@
+---
+/**
+ * FAQ - Curly Hair
+ */
+const faqs = [
+  {
+    question: "¿Es apto para todo tipo de rizos?",
+    answer:
+      "Sí. Nuestra fórmula ha sido desarrollada para cabello rizado en todos sus niveles, desde ondas suaves hasta rizos más definidos, respetando su estructura natural.",
+  },
+  {
+    question: "¿Funciona con el método Curly?",
+    answer:
+      "Sí. Es un producto compatible con el método Curly, formulado sin ingredientes agresivos que alteren la forma o hidratación del rizo.",
+  },
+  {
+    question: "¿Puedo usarlo a diario?",
+    answer:
+      "Sí. Su composición suave permite el uso diario sin resecar ni sobrecargar el cabello rizado.",
+  },
+  {
+    question: "¿Es adecuado para cabello liso?",
+    answer:
+      "No. Este producto ha sido diseñado específicamente para cabello rizado y no se recomienda su uso en cabello liso.",
+  },
+  {
+    question: "¿Ayuda a reducir el frizz?",
+    answer:
+      "Sí. Ayuda a controlar el frizz y a mejorar la definición del rizo gracias a su acción hidratante y nutritiva.",
+  },
+  {
+    question: "¿Es apto para cabello teñido?",
+    answer:
+      "Sí. Puede utilizarse en cabello rizado teñido, ya que ayuda a mantener la hidratación y el aspecto saludable del color.",
+  },
+];
+---
+<section id="faq" class="bg-[#f8f6f3] py-24">
+  <div class="mx-auto max-w-4xl px-4">
+
+    <!-- Header -->
+    <div class="mb-14 text-center">
+      <p class="mb-2 text-xs uppercase tracking-wide text-[#9B9B7E]">
+        Preguntas frecuentes
+      </p>
+      <h2 class="font-serif text-3xl md:text-4xl">
+        Todo lo que necesitas saber sobre el cuidado del rizo
+      </h2>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group rounded-2xl bg-white p-6 shadow-sm">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+            {faq.question}
+            <span class="text-[#9B9B7E] transition group-open:rotate-45">
+              +
+            </span>
+          </summary>
+
+          <p class="mt-4 text-sm opacity-80">
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

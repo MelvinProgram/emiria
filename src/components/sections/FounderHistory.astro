@@ -1,0 +1,69 @@
+---
+/**
+ * Founder History & Social Impact
+ */
+const impacts = [
+  "Apoyo a familias en situación vulnerable",
+  "Acceso a productos básicos de higiene",
+  "Colaboración con organizaciones locales",
+];
+---
+<section
+  id="impacto"
+  class="py-24 bg-[#f8f6f3]"
+>
+  <div class="mx-auto max-w-7xl px-4">
+
+    <div class="grid gap-12 md:grid-cols-2 md:items-center">
+
+      <!-- Imagen -->
+      <div class="relative">
+        <div class="aspect-4/5 overflow-hidden rounded-3xl bg-[#eae7e1]">
+          <img
+            src="/images/founder-history.jpg"
+            alt="Proyecto social apoyado por la marca"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Contenido -->
+      <div class="text-center md:text-left">
+
+        <p class="mb-3 text-xs uppercase tracking-wide text-[#9B9B7E]">
+          Nuestra historia
+        </p>
+
+        <h2 class="mb-6 font-serif text-3xl md:text-4xl">
+          Belleza que transforma vidas
+        </h2>
+
+        <p class="mb-6 max-w-xl text-base opacity-80">
+          Esta marca nació con un propósito claro: crear productos de cuidado
+          capilar de alta calidad y, al mismo tiempo, generar un impacto
+          positivo en la vida de personas en situación de vulnerabilidad.
+        </p>
+
+        <p class="mb-8 max-w-xl text-base opacity-80">
+          Por cada producto que compras, destinamos una parte a apoyar a
+          comunidades con escasos recursos, colaborando con iniciativas
+          locales que trabajan directamente sobre el terreno.
+        </p>
+
+        <!-- Impact list -->
+        <ul class="mx-auto md:mx-0 max-w-md space-y-4 text-sm">
+          {impacts.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-[#9B9B7E]">✓</span>
+              <span class="opacity-80">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

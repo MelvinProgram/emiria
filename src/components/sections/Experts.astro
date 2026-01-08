@@ -1,0 +1,71 @@
+---
+/**
+ * Experts endorsement section
+ */
+const experts = [
+  {
+    name: "Dra. Laura Méndez",
+    role: "Dermatóloga especialista en salud capilar",
+    quote:
+      "La fórmula respeta la estructura natural del cabello rizado, aportando hidratación sin alterar la definición del rizo.",
+    image: "/images/expert-1.jpg",
+  },
+  {
+    name: "María González",
+    role: "Especialista en cabello rizado",
+    quote:
+      "Es un producto bien equilibrado, ideal para personas que buscan cuidar sus rizos de forma consciente y efectiva.",
+    image: "/images/expert-2.jpg",
+  },
+  {
+    name: "Carlos Rivera",
+    role: "Formulador cosmético",
+    quote:
+      "Destaco la selección de ingredientes y su compatibilidad con el método Curly.",
+    image: "/images/expert-3.jpg",
+  },
+];
+---
+<section id="expertos" class="py-24 bg-white">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <!-- Header -->
+    <div class="mb-14 text-center">
+      <p class="mb-2 text-xs uppercase tracking-wide text-[#9B9B7E]">
+        Avalado por expertos
+      </p>
+      <h2 class="font-serif text-3xl md:text-4xl">
+        Profesionales que confían en nuestra fórmula
+      </h2>
+    </div>
+
+    <!-- Experts grid -->
+    <div class="grid gap-10 md:grid-cols-3">
+      {experts.map((expert) => (
+        <div class="text-center">
+          <div class="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full bg-[#f8f6f3]">
+            <img
+              src={expert.image}
+              alt={expert.name}
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <h3 class="font-serif text-lg">
+            {expert.name}
+          </h3>
+
+          <p class="mb-4 text-xs uppercase tracking-wide text-[#9B9B7E]">
+            {expert.role}
+          </p>
+
+          <p class="text-sm opacity-80 max-w-sm mx-auto">
+            “{expert.quote}”
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

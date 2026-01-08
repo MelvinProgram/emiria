@@ -14,12 +14,17 @@ import Reviews from "../components/sections/Rewiews.astro";
 import FinalCTA from "../components/sections/FinalCTA.astro";
 import BeforeAfter from "../components/sections/BeforeAfter.astro";
 import Slide from "../components/sections/Slide.astro";
+import FounderHistory from "../components/sections/FounderHistory.astro";
+import ForWho from "../components/sections/ForWho.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import Experts from "../components/sections/Experts.astro";
 ---
 <MainLayout>
   <Slide />
   <Hero />
   <Benefits />
   <Products />
+  <ForWho />
   <Ingredients />
   <HowToUse />
   <BeforeAfter 
@@ -29,6 +34,9 @@ import Slide from "../components/sections/Slide.astro";
       afterLabel="DESPUÉS"
     />
   <Reviews />
+  <Experts />
+  <FAQ />
+  <FounderHistory />
   <FinalCTA />
 </MainLayout>
 <script type="application/ld+json">

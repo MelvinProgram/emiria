@@ -1,0 +1,64 @@
+---
+/**
+ * For Who section - Curly Hair Only
+ */
+const forWho = [
+  {
+    title: "Cabello rizado",
+    text: "Especialmente formulado para cabello rizado, desde ondas suaves hasta rizos más definidos.",
+  },
+  {
+    title: "Rizos secos o dañados",
+    text: "Ideal para restaurar la hidratación, elasticidad y definición del rizo.",
+  },
+  {
+    title: "Método Curly Friendly",
+    text: "Fórmula respetuosa con la estructura natural del rizo, sin ingredientes agresivos.",
+  },
+  {
+    title: "Cuidado con propósito",
+    text: "Para personas que cuidan sus rizos mientras contribuyen a una causa social real.",
+  },
+];
+---
+<section id="para-quien" class="py-20 bg-white">
+  <div class="mx-auto max-w-7xl px-4">
+
+    <!-- Header -->
+    <div class="mb-14 text-center">
+      <p class="mb-2 text-xs uppercase tracking-wide text-[#9B9B7E]">
+        Para quién es
+      </p>
+      <h2 class="font-serif text-3xl md:text-4xl">
+        Diseñado exclusivamente para cabello rizado
+      </h2>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {forWho.map((item) => (
+        <div class="rounded-3xl border border-black/5 p-6 text-center">
+          <!-- Icon -->
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#9B9B7E]/10 text-[#9B9B7E]">
+            ✦
+          </div>
+
+          <h3 class="mb-2 font-serif text-lg">
+            {item.title}
+          </h3>
+
+          <p class="text-sm opacity-80">
+            {item.text}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Nota aclaratoria -->
+    <p class="mt-10 text-center text-sm opacity-60 max-w-xl mx-auto">
+      *Este producto ha sido desarrollado específicamente para cabello rizado.
+      No recomendado para cabello liso.
+    </p>
+
+  </div>
+</section>
